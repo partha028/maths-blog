@@ -1,38 +1,288 @@
+/* Import professional font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Body & App */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #f5f6fa;
+  color: #333;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  transition: 0.3s;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding-top: 80px;
+}
+
+.App.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+/* Dark/Light toggle */
+.dark-toggle {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  z-index: 1000;
+  background: #0d47a1;
+  color: white;
+  transition: 0.3s;
+}
+
+.App.dark .dark-toggle {
+  background: #90caf9;
+  color: #121212;
+}
+
+/* Header / Hero Section */
+header {
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #0d47a1;
+}
+
+.App.dark header h1 {
+  color: #90caf9;
+}
+
+.subheading {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.App.dark .subheading {
+  color: #ccc;
+}
+
+.intro {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.App.dark .intro {
+  color: #aaa;
+}
+
+/* Header Buttons */
+.header-buttons {
+  margin: 1rem 0;
+}
+
+.header-buttons button {
+  margin: 0 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  border: none;
+  background: #0d47a1;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.App.dark .header-buttons button {
+  background: #90caf9;
+  color: #121212;
+}
+
+.header-buttons button:hover {
+  opacity: 0.85;
+}
+
+/* Search bar */
+.search-bar {
+  padding: 0.6rem 1rem;
+  width: 300px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  margin-top: 1rem;
+  font-size: 16px;
+}
+
+.App.dark .search-bar {
+  background: #1e1e1e;
+  border: 1px solid #555;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Navigation */
+nav {
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+  margin: 1rem 0 2rem 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+nav button {
+  margin: 0 0.5rem 0.5rem 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: none;
+  background: #0d47a1;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+nav button.active {
+  background: #d32f2f;
+}
+
+nav button:hover {
+  opacity: 0.85;
+}
+
+/* Container: 2-column grid */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem 2rem 1rem;
+}
+
+/* Post card */
+.post {
+  background: white;
+  padding: 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.App.dark .post {
+  background: #1e1e1e;
+}
+
+/* Post title */
+.post h2 {
+  font-size: 1.6rem;
+  margin-top: 0;
+  color: #0d47a1;
+}
+
+.App.dark .post h2 {
+  color: #90caf9;
+}
+
+/* Post content */
+.post p {
+  line-height: 1.6;
+  font-size: 16px;
+  margin-top: 0.5rem;
+}
+
+/* Example sum */
+.example {
+  font-style: italic;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+.App.dark .example {
+  color: #ccc;
+}
+
+/* Read More button */
+.read-more {
+  margin-top: 0.8rem;
+  background: #0d47a1;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.App.dark .read-more {
+  background: #90caf9;
+  color: #121212;
+}
+
+.read-more:hover {
+  opacity: 0.85;
+}
+
+/* Pagination */
+.pagination {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.pagination button {
+  margin: 0 0.3rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 5px;
+  border: none;
+  background: #0d47a1;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.pagination button.active {
+  background: #d32f2f;
+}
+
+.pagination button:hover {
+  opacity: 0.85;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem;
+  background: #0d47a1;
+  color: white;
+  font-weight: 500;
+  margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
   }
-  to {
-    transform: rotate(360deg);
+  nav button {
+    margin: 0.3rem 0.2rem;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+  }
+  .read-more {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.9rem;
+  }
+  .search-bar {
+    width: 200px;
+    font-size: 14px;
+  }
+  .container {
+    grid-template-columns: 1fr;
   }
 }
